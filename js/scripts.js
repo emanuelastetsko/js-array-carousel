@@ -8,7 +8,7 @@ const pics = [        // Array contenente le 5 immagini
 
 const containerElement = document.querySelector(".container");
 
-const activePic = 0; 
+
 
 for (let index = 0; index < pics.length; index++) {
     console.log(pics[index]);
@@ -24,3 +24,50 @@ const allPics = document.getElementsByClassName("pic");  //Seleziono tutti gli e
 console.log("allPiccs", allPics, typeof allPics);
 
 allPics[0].classList.add("active");  // Assegno all'immagine con index 0 la classe active, in modo tale da renderla visibile
+
+
+let activePic = 0; 
+
+
+
+const nextPic = document.querySelector(".next");
+nextPic.addEventListener("click",
+
+    function () {
+        console.log("Cliccato su next")
+
+        allPics[activePic].classList.remove("active");
+        activePic++;
+        allPics[activePic].classList.add("active");
+
+        previousPic.classList.remove("hidden");
+
+        if (activePic == allPics.length -1){
+            nextPic.classList.add("hidden");
+        }
+
+    }
+
+)
+
+const previousPic = document.querySelector(".previous");
+previousPic.addEventListener("click",
+
+    function () {
+        console.log("Cliccato su previous")
+
+        allPics[activePic].classList.remove("active");
+        activePic--;
+        allPics[activePic].classList.add("active");
+
+        if (activePic == 0){
+            previousPic.classList.add("hidden");
+        }
+
+        nextPic.classList.remove("hidden");
+
+    }
+
+)
+
+previousPic.classList.add("hidden");    // In modo tale che non compaia al primo caricamento della pagina 

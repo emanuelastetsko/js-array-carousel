@@ -36,3 +36,36 @@ main{
     width: 100%;
     object-fit: cover;
 }
+
+.container .previous,
+.container .next{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    height: 30px;
+    width: 30px;
+    background-color: rgb(255, 255, 255, 0.4);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-size: 0.8em;
+
+}
+
+.container .previous{
+    top: 5px;
+}
+
+.container .next{
+    bottom: 5px;
+}
+
+.container .previous:hover,
+.container .next:hover{
+    cursor: pointer;
+    background-color: rgb(255, 255, 255, 0.9);
+}
+
+.hidden{
+    visibility: hidden;
+}
